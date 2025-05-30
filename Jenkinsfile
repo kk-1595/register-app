@@ -15,6 +15,17 @@ pipeline{
                  git branch: 'main', credentialsId: 'github', url: 'https://github.com/kk-1595/register-app.git'
             }
         }
-    }
-}
+        stage("maven build"){
+            steps {
+                sh "mvn clean pacakge"
+            }
+        }
+        stage('Test application'){
+            steps {
+                sh "mvn test"
+            }
+        }
+            }
+        }
+        
 
