@@ -28,20 +28,20 @@ pipeline{
         stage("sonarqube analysis"){
             steps {
                 script{
-                    withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token'){
+                    withSonarQubeEnv(credentialsId: 'Jenkins-Sonarqube-token'){
                     sh "mvn sonar:sonar"    
                     }
                 }
-                }
             }
+        }
         stage("Quality gate"){
             steps {
                 script {
                     waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
                 }
-                }
-                }
             }
+        }
+    }
 }
         
 
