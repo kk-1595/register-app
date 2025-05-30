@@ -6,12 +6,12 @@ pipeline{
     }
     stages{
         stage("cleanup workspace"){
-            step {
+            steps {
                 cleanWS()
             }
         }
         stage ('Git chekout'){
-            step{
+            steps {
                  git branch: 'main', credentialsId: 'github', url: 'https://github.com/kk-1595/register-app.git'
             }
         }
