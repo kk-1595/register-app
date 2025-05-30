@@ -10,7 +10,7 @@ pipeline{
                 cleanWS()
             }
         }
-        stage ('Git chekout'){
+        stage('Git chekout'){
             steps {
                  git branch: 'main', credentialsId: 'github', url: 'https://github.com/kk-1595/register-app.git'
             }
