@@ -10,10 +10,12 @@ pipeline{
                 cleanWS()
             }
         }
-        stage("checkout from git")
-        stage{
-            git branch: 'main', credentialsId: 'github', url: 'https://github.com/kk-1595/register-app.git'
-        }
+        stage ('Git chekout'){
+            step{
+                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/kk-1595/register-app.git'
+
+            }
         }
     }
+}
 
