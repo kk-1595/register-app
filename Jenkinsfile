@@ -34,7 +34,6 @@ pipeline{
                 }
                 }
             }
-        }
         stage("Quality gate"){
             steps {
                 script {
@@ -43,5 +42,6 @@ pipeline{
                 }
                 }
             }
+}
         
 
